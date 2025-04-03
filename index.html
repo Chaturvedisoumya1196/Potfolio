@@ -39,7 +39,41 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .popup a {
+            color: #0073e6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .popup button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: #0073e6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
+    <script>
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -55,9 +89,9 @@
     <section>
         <h2>Projects</h2>
         <ul>
-            <li>SEO Optimization for E-commerce Website</li>
-            <li>Google Ads Campaign for a Tech Startup</li>
-            <li>Social Media Growth Strategy for a Fashion Brand</li>
+            <li><a href="#" onclick="openPopup()">SEO Optimization for E-commerce Website</a></li>
+            <li><a href="https://example.com/google-ads-campaign" target="_blank">Google Ads Campaign for a Tech Startup</a></li>
+            <li><a href="https://example.com/social-media-strategy" target="_blank">Social Media Growth Strategy for a Fashion Brand</a></li>
         </ul>
     </section>
 
@@ -92,5 +126,13 @@
         <p>Email: soumya@example.com</p>
         <p>LinkedIn: linkedin.com/in/soumyachaturvedi</p>
     </section>
+
+    <div id="popup" class="popup">
+        <h2>SEO Optimization for E-commerce</h2>
+        <p>Check out the SEO Audit Report for Teachmint.</p>
+        <a href="/mnt/data/Techmint Audit Report P1.pdf" target="_blank">Open Report</a>
+        <br>
+        <button onclick="closePopup()">Close</button>
+    </div>
 </body>
 </html>
